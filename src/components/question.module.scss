@@ -15,11 +15,11 @@
   h2 {
     margin: $margin-double 0;
     white-space: pre-wrap;
-    font-weight: 400;
+    font-weight: $font-weight-bold;
   }
 
   .subtext {
-    font-weight: 300;
+    font-weight: $font-weight-light;
     color: $color-grey;
     font-size: 0.8em;
   }
@@ -29,11 +29,11 @@
   position: absolute;
   bottom: $margin-double;
   left: $margin-double;
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
 
   h3 {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     font-size: 1em;
   }
 

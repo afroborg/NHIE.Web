@@ -16,7 +16,7 @@ const Question = () => {
       const response = await axios.get<{
         total: number;
         questions: IQuestion[];
-      }>(config.API_URL + `questions?limit=${LIMIT}`, {
+      }>(config.API_URL + `questions/random?limit=${LIMIT}`, {
         headers: { Authorization: config.API_KEY },
       });
 
