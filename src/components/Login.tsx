@@ -1,6 +1,5 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import config from '../config';
+import { postAsync } from '../helpers/api-service';
 import styles from './login.module.scss';
 
 interface ILoginProps {
@@ -9,15 +8,20 @@ interface ILoginProps {
 
 const Login: React.FC<ILoginProps> = ({ setAuth }) => {
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post(config.API_URL + 'auth', { password });
+      setIsLoading(true);
+      await postAsync('auth', { password });
       setAuth(true);
-    } catch {
+    } catch (e) {
       setAuth(false);
+      setError(e.data);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -31,7 +35,8 @@ const Login: React.FC<ILoginProps> = ({ setAuth }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Logga in!</button>
+        <button type="submit">{isLoading ? 'Laddar...' : 'Logga in'}</button>
+        {error && <p className={styles.errorMsg}>{error}</p>}
       </form>
     </div>
   );

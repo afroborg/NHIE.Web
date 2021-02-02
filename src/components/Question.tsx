@@ -1,6 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import config from '../config';
+import { getAsync } from '../helpers/api-service';
 import { IQuestion } from '../models/IQuestion';
 import styles from './question.module.scss';
 
@@ -13,14 +12,11 @@ const Question = () => {
     const fetchQuestions = async () => {
       setIsLoading(true);
       const LIMIT = 100;
-      const response = await axios.get<{
-        total: number;
-        questions: IQuestion[];
-      }>(config.API_URL + `questions/random?limit=${LIMIT}`, {
-        headers: { Authorization: config.API_KEY },
-      });
+      const response = await getAsync<IQuestion[]>(
+        `questions/random?limit=${LIMIT}`
+      );
 
-      setQuestions(response.data.questions);
+      setQuestions(response.data);
     };
 
     fetchQuestions();
@@ -66,17 +62,9 @@ const Question = () => {
       )}
 
       <div className={styles.credits}>
-        <h3>Text och Musik:</h3>
+        <h3>Frågor av:</h3>
         <p>Elin Lundqvist</p>
-        <p>
-          <a
-            href="https://twitter.com/alaxendrawallin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Alexandra Wallin
-          </a>
-        </p>
+        <p>Alexandra Wallin</p>
       </div>
     </div>
   );
