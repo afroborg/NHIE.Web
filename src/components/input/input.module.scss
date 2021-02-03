@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: $padding;
+
+  input {
+    height: $input-height;
+    padding: $padding-double;
+    outline: none;
+    border: 1px solid $color-input-border;
+    background: $color-input-background;
+    border-radius: $border-radius-small;
+    width: 100%;
+
+    &::placeholder {
+      color: $color-text-third;
+    }
+  }
+}

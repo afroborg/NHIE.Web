@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.counter {
+  padding: $padding-half $padding;
+  background: $color-pink-primary;
+  border-radius: 999px;
+  font-size: 0.75em;
+  color: white;
+}
+
+.questions {
+  margin-top: $margin-double;
+}
+
+.question {
+  padding: $padding-double;
+  background: white;
+  border-radius: $border-radius-big;
+  box-shadow: $box-shadow;
+  margin-bottom: $margin;
+}

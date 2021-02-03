@@ -1,5 +1,5 @@
 @import 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -10,7 +10,7 @@
 
 body {
   font-family: $font-family;
-  font-size: 24px;
-  background: pink;
-  color: white;
+  font-size: 16px;
+  background: $color-body-background;
+  color: $color-text-primary;
 }

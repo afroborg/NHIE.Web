@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.footer {
+  height: $footer-height;
+  background: white;
+  padding: $padding-double 3%;
+  display: flex;
+  font-size: 0.8em;
+}
+
+.list {
+  margin-right: $margin-double;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.header {
+  font-weight: 700;
+  text-transform: uppercase;
+}

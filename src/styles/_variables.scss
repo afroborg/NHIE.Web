@@ -1,10 +1,11 @@
-$padding: 8px;
-$margin: 8px;
-$margin-double: $margin * 2;
+@import './colors';
+@import './sizes';
 
-$font-family: 'Comic Neue', 'Arial';
+$font-family: 'Roboto', 'Arial';
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
 $color-grey: rgba(255, 255, 255, 0.7);
+
+$box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);

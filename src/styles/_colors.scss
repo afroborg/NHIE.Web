@@ -1,0 +1,17 @@
+$color-grey-primary: #ededed;
+$color-grey-secondary: #8a8a8a;
+$color-grey-third: #c9c9c9;
+$color-black-primary: #111;
+
+$color-pink-primary: #ff39b0;
+$color-pink-20: transparentize($color-pink-primary, 0.2);
+
+$color-blue-primary: #42d2f2;
+
+$color-text-primary: $color-black-primary;
+$color-text-secondary: $color-grey-secondary;
+$color-text-third: $color-grey-third;
+
+$color-body-background: $color-grey-primary;
+$color-input-background: #f8f8f8;
+$color-input-border: #f0f0f0;

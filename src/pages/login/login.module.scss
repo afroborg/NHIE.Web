@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: $padding;
+
+  h1 {
+    font-size: 1.2em;
+    margin-bottom: $margin-double;
+  }
+}
+
+.modal {
+  margin-top: -$header-height;
+  width: 95%;
+  padding: 5%;
+  background: white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius-big;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.how {
+  width: 100%;
+  padding: 0 $padding;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: right;
+}
+
+.button {
+  margin-top: $margin-triple;
+  width: 50%;
+}
+
+.errorMsg {
+  margin-top: $margin;
+  font-size: 0.8em;
+}

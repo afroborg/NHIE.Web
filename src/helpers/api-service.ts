@@ -22,7 +22,9 @@ export const postAsync = <T>(
 ): Promise<IApiResponse<T>> =>
   new Promise((resolve, reject) => {
     api
-      .post<IApiResponse<T>>(config.API_URL + endpoint, data)
+      .post<IApiResponse<T>>(config.API_URL + endpoint, data, {
+        headers: { Authorization: config.API_KEY },
+      })
       .then((res) => resolve(res.data))
       .catch((err) =>
         reject({ status: err.response.status, data: err.response.data })
