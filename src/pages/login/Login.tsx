@@ -1,14 +1,12 @@
 import Button from '@/components/button/Button';
 import Input from '@/components/input/Input';
 import { postAsync } from '@/helpers/api-service';
+import { routes } from '@/routes';
 import React, { useState } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import styles from './login.module.scss';
 
-interface ILoginProps {
-  setAuth: (b: boolean) => void;
-}
-
-const Login: React.FC<ILoginProps> = ({ setAuth }) => {
+const Login: React.FC<RouteComponentProps> = ({ history }) => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -18,9 +16,8 @@ const Login: React.FC<ILoginProps> = ({ setAuth }) => {
     try {
       setIsLoading(true);
       await postAsync('auth', { password });
-      setAuth(true);
+      history.push(routes.PLAY.path);
     } catch (e) {
-      setAuth(false);
       setError(e.data);
     }
     setIsLoading(false);
@@ -35,6 +32,7 @@ const Login: React.FC<ILoginProps> = ({ setAuth }) => {
             value={password}
             onChange={setPassword}
             placeholder="Lösenord"
+            type="password"
           />
           <p className={styles.how}>Hur får jag ett lösenord?</p>
           <div className={styles.button}>
